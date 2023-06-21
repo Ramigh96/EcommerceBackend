@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 mongoose.set("strictQuery", false);
 // Connexion à la base données
-mongoose.connect(process.env.DATABASE,{
+mongoose.connect(process.env.DATABASECLOUD,{
 useNewUrlParser: true,
 useUnifiedTopology: true
 })
@@ -23,3 +23,4 @@ res.send("Bievenue dans notre site");
 app.use('/api/categories', categorieRouter);
 app.listen(process.env.PORT, () => {
 console.log(`Server is listening on port ${process.env.PORT}`); });
+module.exports = app;
